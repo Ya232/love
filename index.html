@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pour Ema 💖</title>
+  <style>
+    :root{
+      --bg:#070617;
+      --accent:#ff6b9a;
+      --accent2:#ffd6e0;
+      --glass: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.02);
+      --text: #f6f6ff;
+      --muted: rgba(246,246,255,0.6);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:radial-gradient(ellipse at 10% 10%, rgba(255,107,154,0.06), transparent 10%), radial-gradient(ellipse at 90% 90%, rgba(255,214,224,0.03), transparent 15%), var(--bg);overflow:hidden;color:var(--text)}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .card{width:min(860px,96vw);max-width:960px;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 40px rgba(5,6,15,0.6);backdrop-filter: blur(6px);position:relative;overflow:hidden;}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:66px;height:66px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:22px;box-shadow:0 6px 18px rgba(255,107,154,0.18)}
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    .scene{margin-top:20px;display:grid;grid-template-columns:1fr 360px;gap:22px}
+    @media (max-width:880px){.scene{grid-template-columns:1fr;}.right{order:-1}}
+    .left{padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border-radius:12px;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+    .big-heart{width:240px;height:240px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+    .big-heart .heart{width:140px;height:140px;background:linear-gradient(135deg,var(--accent),#ff9bbf);transform:rotate(-45deg);border-radius:20px 20px 0 0;position:relative;animation:beat 1300ms infinite alternate ease-in-out;box-shadow:0 18px 50px rgba(255,107,154,0.12)}
+    .big-heart .heart:before,.big-heart .heart:after{content:"";width:140px;height:140px;background:linear-gradient(135deg,var(--accent),#ff9bbf);border-radius:50%;position:absolute}
+    .big-heart .heart:before{top:-70px;left:0}
+    .big-heart .heart:after{left:70px;top:0}
+    @keyframes beat{to{transform:rotate(-45deg) scale(1.08)}}
+    .hint{margin-top:18px;color:var(--muted);text-align:center}
+    .right{padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border-radius:12px;min-height:360px;display:flex;flex-direction:column;gap:12px}
+    .panel{background:var(--card);padding:14px;border-radius:10px;min-height:80px}
+    .typebox{font-size:18px;line-height:1.5;min-height:110px;white-space:pre-wrap}
+    .controls{display:flex;gap:10px;align-items:center}
+    .btn{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff9bbf);border:none;color:white;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(255,107,154,0.12)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);box-shadow:none}
+    footer{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+    .float-wrap{pointer-events:none;position:absolute;inset:0}
+    .heart-float{position:absolute;width:22px;height:22px;transform:rotate(-45deg);background:linear-gradient(135deg,var(--accent),#ff9bbf);border-radius:6px;opacity:0.9}
+    .cursor{display:inline-block;width:8px;height:20px;background:var(--text);margin-left:6px;vertical-align:middle;animation:blink 900ms steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .reveal{margin-top:12px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,107,154,0.06), rgba(255,107,154,0.02));text-align:center;color:#fff}
+    .reveal h2{margin:8px 0 0;font-size:24px}
+    .poem{font-style:italic;color:rgba(255,255,255,0.92);margin-top:8px}
+    .final-question{margin-top:16px;font-size:20px;color:#ffd6e0;font-weight:500;animation:fadeIn 1.5s ease-in}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @media (max-width:480px){.scene{gap:12px}.right{min-height:240px}.big-heart{width:180px;height:180px}.big-heart .heart{width:110px;height:110px}.typebox{font-size:16px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">E💖</div>
+        <div>
+          <h1>Une petite surprise pour <strong>Ema</strong></h1>
+          <p class="lead">Appuie sur le coeur. Chaque clic dévoile un morceau du message.</p>
+        </div>
+      </header>
+      <div class="scene">
+        <div class="left">
+          <div class="big-heart" id="bigHeart" title="Appuie ici">
+            <div class="heart"></div>
+          </div>
+          <div class="hint">Appuie sur le coeur doucement... ❤️</div>
+        </div>
+        <div class="right">
+          <div class="panel">
+            <div class="typebox" id="typebox">Salut Ema...<span class="cursor" id="cursor"></span></div>
+          </div>
+          <div class="controls">
+            <button class="btn" id="revealBtn">Révéler la suite</button>
+            <button class="btn ghost" id="resetBtn">Réinitialiser</button>
+          </div>
+          <div id="revealArea"></div>
+        </div>
+      </div>
+      <footer>Créé juste pour elle — une petite déclaration.</footer>
+      <div class="float-wrap" id="floatWrap"></div>
+    </div>
+  </div>
+  <script>
+    const pieces = [
+      "Quand la nuit est calme, c'est ton nom qui revient dans mes pensées.",
+      "Il y a des moments où tout semble plus doux — et tu en fais partie.",
+      "Ta voix, même en souvenir, me rassure. Ton rire allume quelque chose en moi.",
+      "Je voulais te dire quelque chose depuis un moment..."
+    ];
+    const finalClear = "Ema, je t'aime.";
+    const finalPoetic = "Tu es devenue la plus belle pensée de mes jours et la douceur de mes nuits.";
+    const finalQuestion = "Accepterais-tu ma proposition ? 💌";
+    let idx = 0;
+    const typebox = document.getElementById('typebox');
+    const revealArea = document.getElementById('revealArea');
+    const bigHeart = document.getElementById('bigHeart');
+    const revealBtn = document.getElementById('revealBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const floatWrap = document.getElementById('floatWrap');
+    function makeCursor(){const s=document.createElement('span');s.className='cursor';return s;}
+    function typeText(element, text, speed=30){return new Promise(resolve=>{element.textContent='';const cursor=makeCursor();element.appendChild(cursor);let i=0;const interval=setInterval(()=>{if(!element.childNodes[0]||element.childNodes[0].nodeType!==Node.TEXT_NODE){element.insertBefore(document.createTextNode(''),element.firstChild);}element.childNodes[0].textContent=text.slice(0,i);i++;if(i>text.length){clearInterval(interval);element.textContent=text;resolve();}},speed);});}
+    function spawnHeart(x,y){const h=document.createElement('div');h.className='heart-float';h.style.left=x+'px';h.style.top=y+'px';const size=Math.random()*18+12;h.style.width=size+'px';h.style.height=size+'px';h.style.opacity=0.9;floatWrap.appendChild(h);const toY=y-(120+Math.random()*140);const toX=x+(Math.random()*80-40);h.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:'translate('+(toX-x)+'px, '+(toY-y)+'px) scale(0.7)',opacity:0}],{duration:1600+Math.random()*1000,easing:'cubic-bezier(.2,.8,.2,1)'});setTimeout(()=>{h.remove();},3000);}
+    bigHeart.addEventListener('click',async(e)=>{const rect=e.currentTarget.getBoundingClientRect();for(let i=0;i<6;i++){spawnHeart(rect.left+rect.width/2+(Math.random()*40-20),rect.top+rect.height/2+(Math.random()*40-20));}if(idx<pieces.length){await typeText(typebox,pieces[idx]);idx++;}else if(idx===pieces.length){await typeText(typebox,pieces[idx-1]+'\n'+'...');idx++;}else{await typeText(typebox,'Appuie sur "Révéler la suite" pour la surprise finale.');}});
+    revealBtn.addEventListener('click',async()=>{if(idx<pieces.length){await typeText(typebox,pieces[idx]);idx++;return;}revealBtn.disabled=true;revealBtn.innerText='Révélation...';for(let i=0;i<30;i++){setTimeout(()=>{const x=Math.random()*window.innerWidth;const y=window.innerHeight-(120+Math.random()*240);spawnHeart(x,y);},i*60);}await new Promise(r=>setTimeout(r,1800));revealArea.innerHTML='';const cont=document.createElement('div');cont.className='reveal';const poem=document.createElement('div');poem.className='poem';poem.textContent='"'+finalPoetic+'"';const h2=document.createElement('h2');h2.textContent=finalClear;const question=document.createElement('div');question.className='final-question';question.textContent=finalQuestion;cont.appendChild(poem);cont.appendChild(h2);cont.appendChild(question);revealArea.appendChild(cont);document.querySelector('.card').animate([{boxShadow:'0 8px 30px rgba(255,107,154,0.08)'},{boxShadow:'0 18px 80px rgba(255,107,154,0.18)'}],{duration:900,iterations:2,direction:'alternate'});revealBtn.innerText="C'est dit ❤️";});
+    resetBtn.addEventListener('click',()=>{idx=0;typebox.textContent='Salut Ema...';typebox.appendChild(makeCursor());revealArea.innerHTML='';revealBtn.disabled=false;revealBtn.innerText='Révéler la suite';});
+    setInterval(()=>{const x=Math.random()*window.innerWidth;const y=window.innerHeight-(30+Math.random()*60);spawnHeart(x,y);},800);
+    window.onload=async()=>{await typeText(typebox,'Salut Ema...');await new Promise(r=>setTimeout(r,700));typeText(typebox,'Salut Ema...');};
+  </script>
+</body>
+</html>
